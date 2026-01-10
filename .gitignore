@@ -3,6 +3,6 @@
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-#/node_modules/
-#/dist/
+/node_modules/
+/dist/
 /.vercel/
