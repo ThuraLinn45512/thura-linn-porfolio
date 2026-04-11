@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Youtube } from 'lucide-react';
 import { useState } from 'react';
@@ -33,8 +35,8 @@ export function Contact() {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+66943439908',
-      link: 'tel:+66943439908'
+      value: '+66943419908',
+      link: 'tel:+66943419908'
     },
     {
       icon: MapPin,
@@ -46,9 +48,9 @@ export function Contact() {
 
   const socialLinks = [
     { icon: Github, label: 'GitHub', link: 'https://github.com/ThuraLinn45512' },
-    { icon: Linkedin, label: 'LinkedIn', link: 'https://linkedin.com/in/thuralinn' },
+    { icon: Linkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/in/thura-linn-923a83344' },
     { icon: Twitter, label: 'Twitter', link: 'https://twitter.com/elshaarawy' },
-    { icon: Youtube, label: 'YouTube', link: 'https://youtube.com/channel/UCXv7v7v7v7v7v7v7v7v7v7' }
+    { icon: Youtube, label: 'YouTube', link: 'https://www.youtube.com/@CodeWallTechnologies' }
   ];
 
   return (

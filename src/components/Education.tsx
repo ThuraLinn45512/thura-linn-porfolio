@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { GraduationCap, Calendar, Languages } from 'lucide-react';
 
@@ -36,14 +38,25 @@ export function Education() {
               <h3 className="text-2xl">Education</h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-8">
               <div>
-                <h4 className="text-xl mb-2">Bachelor of Science in Computer Science</h4>
-                <p className="text-teal-400 mb-2">University of Computer Studies, Hinthada (UCSH)</p>
-                <div className="flex items-center gap-2 text-gray-400">
+                <h4 className="text-xl mb-1">Bachelor of Information Technology (IT)</h4>
+                <p className="text-teal-400 mb-1">SouthEast Bangkok University (SBU)</p>
+                <div className="flex items-center gap-2 text-gray-400 mb-2">
                   <Calendar size={16} />
-                  <span>2016 - 2020</span>
+                  <span>2025 - 2026 (Ongoing)</span>
                 </div>
+                <p className="text-gray-400 text-sm italic">Top-up Program</p>
+              </div>
+
+              <div className="border-t border-gray-700 pt-6">
+                <h4 className="text-xl mb-1">Fourth Year Student (B.C.Sc.)</h4>
+                <p className="text-teal-400 mb-1">University of Computer Studies, Hinthada (UCSH)</p>
+                <div className="flex items-center gap-2 text-gray-400 mb-2">
+                  <Calendar size={16} />
+                  <span>2016 - 2019</span>
+                </div>
+                <p className="text-gray-400 text-sm">Successfully completed the 4th year of a 5-year program.</p>
               </div>
             </div>
           </motion.div>

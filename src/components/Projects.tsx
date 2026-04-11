@@ -1,6 +1,9 @@
+'use client';
+
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
+import { motion } from 'motion/react';
 
 interface Project {
   id: number;
