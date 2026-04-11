@@ -1,6 +1,9 @@
+'use client';
+
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useRouter } from 'next/navigation';
 
 interface NavigationProps {
   activeSection: string;
@@ -9,10 +12,22 @@ interface NavigationProps {
 
 export function Navigation({ activeSection, setActiveSection }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
   
+  // Safety: Reset scroll lock if component unmounts or menu closes unexpectedly
+  useEffect(() => {
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'unset';
+    } else {
+      // Optional: block scroll when menu is open
+      // document.body.style.overflow = 'hidden';
+    }
+  }, [isMenuOpen]);
+
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'education', label: 'Education' },
@@ -20,10 +35,22 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
   ];
 
   const handleNavClick = (id: string) => {
-    setActiveSection(id);
+    // 1. Close the menu immediately
     setIsMenuOpen(false);
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    
+    // 2. Update the active state
+    setActiveSection(id);
+    
+    // 3. Update URL without refreshing
+    router.push(`#${id}`);
+    
+    // 4. Smooth scroll to element
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (
@@ -41,26 +68,30 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <button
+              <motion.button
                 key={item.id}
+                type="button"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => handleNavClick(item.id)}
-                className={`transition-colors ${
+                className={`transition-colors py-2 ${
                   activeSection === item.id
-                    ? 'text-teal-400'
+                    ? 'text-teal-400 font-semibold'
                     : 'text-gray-300 hover:text-teal-400'
                 }`}
               >
                 {item.label}
-              </button>
+              </motion.button>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-300 hover:text-blue-400"
+            className="md:hidden p-2 text-gray-300 hover:text-teal-400 transition-colors"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
@@ -73,19 +104,21 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="flex flex-col gap-4 pt-4 pb-2">
+              <div className="flex flex-col gap-2 pt-4 pb-4">
                 {navItems.map((item) => (
-                  <button
+                  <motion.button
                     key={item.id}
+                    type="button"
+                    whileTap={{ scale: 0.98, backgroundColor: "rgba(45, 212, 191, 0.1)" }}
                     onClick={() => handleNavClick(item.id)}
-                    className={`text-left py-2 transition-colors ${
+                    className={`text-left px-4 py-3 rounded-lg transition-all ${
                       activeSection === item.id
-                        ? 'text-teal-400'
-                        : 'text-gray-300 hover:text-teal-400'
+                        ? 'text-teal-400 bg-teal-400/10 font-bold'
+                        : 'text-gray-300 hover:text-teal-400 hover:bg-gray-800'
                     }`}
                   >
                     {item.label}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </motion.div>

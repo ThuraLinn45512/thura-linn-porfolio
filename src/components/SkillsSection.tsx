@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { Code2, Blocks, Palette, Box, FolderKanban, Megaphone, GraduationCap, Server, Cloud } from 'lucide-react';
 
@@ -6,8 +8,8 @@ export function SkillsSection() {
     {
       icon: Code2,
       title: 'Programming Languages',
-      skills: ['Java', 'Kotlin', 'Dart', 'PHP', 'JavaScript', 'Python'],
-      expert: ['Java', 'Kotlin']
+      skills: ['Java', 'Kotlin', 'Dart', 'PHP', 'JavaScript', 'TypeScript', 'Python'],
+      expert: ['Java', 'Kotlin', 'JavaScript']
     },
     {
       icon: Blocks,
@@ -19,7 +21,7 @@ export function SkillsSection() {
       icon: Palette,
       title: 'Graphic Designs',
       skills: ['Figma', 'Photoshop', 'Illustrator'],
-      expert: []
+      expert: ['Figma']
     },
     {
       icon: Box,
@@ -37,19 +39,19 @@ export function SkillsSection() {
       icon: Megaphone,
       title: 'Digital Marketing',
       skills: ['Content Creation and Planning', 'Video Editing', 'Strategy Ads'],
-      expert: ['Content Creation and Planning']
+      expert: ['Content Creation and Planning', 'Strategy Ads']
     },
     {
       icon: GraduationCap,
       title: 'Teaching',
       skills: ['Computer Science related technologies', 'Android, UI UX', 'Web Development & Flutter'],
-      expert: ['Android, UI UX, Web Development & Flutter']
+      expert: ['Computer Science related technologies', 'Android, UI UX', 'Web Development & Flutter']
     },
     {
       icon: Server,
       title: 'Additional Skills',
       skills: ['Linux Administrator'],
-      expert: []
+      expert: ['Linux Administrator']
     },
     {
       icon: Cloud,
@@ -94,7 +96,7 @@ export function SkillsSection() {
               <div className="space-y-2">
                 {category.skills.map((skill, skillIndex) => {
                   const isExpert = category.expert.some(expertSkill => 
-                    skill.toLowerCase().includes(expertSkill.toLowerCase())
+                    skill.toLowerCase() === expertSkill.toLowerCase()
                   );
                   
                   return (

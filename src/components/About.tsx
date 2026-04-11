@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { Code, Palette, Users, TrendingUp, GraduationCap, Globe } from 'lucide-react';
 

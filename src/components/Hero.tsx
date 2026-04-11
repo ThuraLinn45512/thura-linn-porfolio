@@ -1,6 +1,8 @@
+'use client';
+
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail, Phone, MapPin, Calendar, Heart } from 'lucide-react';
-import profileImage from 'figma:asset/efff91fe0cb1f1c1ab594d806e529db66a3da699.png';
+import profileImage from '../assets/efff91fe0cb1f1c1ab594d806e529db66a3da699.png';
 
 export function Hero() {
   return (
@@ -11,7 +13,7 @@ export function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="space-y-6 "
         >
           <h1 className="text-6xl md:text-8xl mb-4 leading-tight">
             Hi, I'm <br />
@@ -39,7 +41,7 @@ export function Hero() {
             
             {/* Profile image */}
             <img
-              src={profileImage}
+              src={profileImage.src}
               alt="Thura Linn"
               className="relative rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-4 border-gray-700/50 shadow-2xl group-hover:border-cyan-400/50 transition-all duration-500"
             />
