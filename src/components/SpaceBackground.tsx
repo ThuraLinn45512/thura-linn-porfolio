@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-const stars = Array.from({ length: 90 }, (_, index) => ({
+const stars = Array.from({ length: 42 }, (_, index) => ({
   id: index,
   left: (index * 37) % 101,
   top: (index * 61) % 101,
@@ -81,10 +81,7 @@ export function SpaceBackground() {
         <span className="satellite-dish" />
       </div>
       <span className="cosmic-object comet comet-one" />
-      <span className="cosmic-object comet comet-two" />
       <span className="cosmic-object asteroid asteroid-one" />
-      <span className="cosmic-object asteroid asteroid-two" />
-      <span className="cosmic-object asteroid asteroid-three" />
       <div className="space-vignette" />
     </div>
   );
