@@ -5,7 +5,7 @@ import { GraduationCap, Calendar, Languages } from 'lucide-react';
 
 export function Education() {
   const languages = [
-    { name: 'English', level: 'C2', color: 'from-cyan-400 to-teal-600' },
+    { name: 'English', level: 'B2', color: 'from-cyan-400 to-teal-600' },
     { name: 'Japanese', level: 'N5', color: 'from-emerald-400 to-green-600' },
     { name: 'Thai', level: 'Basic', color: 'from-teal-400 to-cyan-600' }
   ];
@@ -88,7 +88,7 @@ export function Education() {
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <motion.div
                       initial={{ width: 0 }}
-                      whileInView={{ width: lang.level === 'C2' ? '95%' : lang.level === 'N5' ? '60%' : '40%' }}
+                      whileInView={{ width: lang.level === 'B2' ? '75%' : lang.level === 'N5' ? '60%' : '40%' }}
                       viewport={{ once: true }}
                       transition={{ duration: 1, delay: index * 0.2 }}
                       className={`h-full rounded-full bg-gradient-to-r ${lang.color}`}

@@ -33,7 +33,7 @@ export function About() {
     {
       icon: Globe,
       title: 'Multilingual',
-      description: 'Fluent in English (C2), Japanese (N5), and Thai'
+      description: 'Fluent in English (B2), Japanese (N5), and Thai'
     }
   ];
 

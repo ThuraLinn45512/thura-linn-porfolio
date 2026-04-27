@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Youtube } from 'lucide-react';
 import { useState } from 'react';
 
 export function Contact() {
@@ -49,7 +49,7 @@ export function Contact() {
   const socialLinks = [
     { icon: Github, label: 'GitHub', link: 'https://github.com/ThuraLinn45512' },
     { icon: Linkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/in/thura-linn-923a83344' },
-    { icon: Twitter, label: 'Twitter', link: 'https://twitter.com/elshaarawy' },
+    { icon: Send, label: 'Telegram', link: 'https://t.me/thuralinn45512' },
     { icon: Youtube, label: 'YouTube', link: 'https://www.youtube.com/@CodeWallTechnologies' }
   ];
 
@@ -124,7 +124,50 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative overflow-hidden rounded-xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-gray-900/50 to-emerald-500/10 p-8 shadow-[0_0_45px_rgba(45,212,191,0.14)] backdrop-blur-sm"
+          >
+            <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-400/20 blur-3xl" />
+            <div className="absolute -bottom-20 left-10 h-56 w-56 rounded-full bg-emerald-400/15 blur-3xl" />
+
+            <div className="relative">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 shadow-[0_0_30px_rgba(45,212,191,0.35)]">
+                <Send size={26} className="text-white" />
+              </div>
+
+              <h3 className="mb-4 text-3xl font-bold">Let&apos;s Build Something</h3>
+              <p className="mb-8 max-w-md text-lg leading-8 text-gray-300">
+                For project discussions, collaborations, or quick questions, Telegram is the fastest way to reach me.
+              </p>
+
+              <div className="space-y-4">
+                <a
+                  href="https://t.me/thuralinn45512"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-fit items-center gap-3 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 px-6 py-3 font-bold text-white shadow-[0_0_28px_rgba(45,212,191,0.35)] transition-all hover:scale-105"
+                >
+                  <Send size={18} />
+                  Message on Telegram
+                </a>
+
+                <div className="grid gap-4 pt-6 sm:grid-cols-2">
+                  <div className="rounded-lg border border-cyan-400/20 bg-gray-900/30 p-4">
+                    <p className="text-sm text-gray-400">Response</p>
+                    <p className="mt-1 font-bold text-cyan-200">Usually within a day</p>
+                  </div>
+                  <div className="rounded-lg border border-cyan-400/20 bg-gray-900/30 p-4">
+                    <p className="text-sm text-gray-400">Available For</p>
+                    <p className="mt-1 font-bold text-cyan-200">Web & Mobile Projects</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </motion.div>
     </div>

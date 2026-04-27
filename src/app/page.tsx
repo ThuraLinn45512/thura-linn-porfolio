@@ -9,15 +9,17 @@ import { SkillsSection } from '../components/SkillsSection';
 import { FeaturedProject } from '../components/FeaturedProject';
 import { Education } from '../components/Education';
 import { Contact } from '../components/Contact';
+import { SpaceBackground } from '../components/SpaceBackground';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
+    <div className="relative min-h-screen overflow-hidden bg-[#03040b] text-gray-100">
+      <SpaceBackground />
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
       
-      <main>
+      <main className="relative z-10">
         <section id="home">
           <Hero />
         </section>
@@ -47,7 +49,7 @@ export default function Home() {
         </section>
       </main>
       
-      <footer className="border-t border-gray-800 py-8 text-center text-gray-400">
+      <footer className="relative z-10 border-t border-gray-800 py-8 text-center text-gray-400">
         <p>&copy; {new Date().getFullYear()} Thura Linn. All rights reserved.</p>
       </footer>
     </div>

@@ -15,7 +15,7 @@ export function SkillsSection() {
       icon: Blocks,
       title: 'Frameworks',
       skills: ['Android', 'Flutter', 'Laravel', 'Spring', 'Next JS'],
-      expert: ['Android']
+      expert: ['Android', 'Next JS']
     },
     {
       icon: Palette,
